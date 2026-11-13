@@ -1,0 +1,10 @@
+.env
+.git
+.gitignore
+.idea
+.claude
+openspec
+**/__pycache__
+**/*.pyc
+Dockerfile
+docker-compose.yml

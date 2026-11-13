@@ -18,6 +18,7 @@ async def main():
     config: Config = load_config()
 
     database: DataBase = DataBase(config=config.db)
+    database.schema_manager.create_all_schemas()
 
     updates_store: UpdatesConnection = UpdatesConnection(config=config)
     scraper: Scraper = Scraper(api=ApiService(), db=database)

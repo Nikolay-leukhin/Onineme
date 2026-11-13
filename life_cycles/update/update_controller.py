@@ -68,5 +68,8 @@ class UpdateController:
 
     async def start_mailing_update_loop(self):
         while True:
-            await self.start_mailing_updates()
+            try:
+                await self.start_mailing_updates()
+            except Exception:
+                logger.exception(f"updates check failed | retry in {self.duration}s")
             await asyncio.sleep(self.duration)
